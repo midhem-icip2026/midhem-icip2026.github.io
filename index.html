@@ -250,9 +250,23 @@
       display: flex; align-items: center; justify-content: center; overflow: hidden;
       background: var(--bg);
     }
-    #hero-canvas { position: absolute; inset: 0; z-index: 0; }
-    .hero-overlay {
+    #hero-bg {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; object-position: center;
+      opacity: 0.32; z-index: 0;
+      pointer-events: none;
+    }
+    [data-theme="light"] #hero-bg { opacity: 0.14; }
+    .hero-bg-overlay {
       position: absolute; inset: 0; z-index: 1;
+      background: linear-gradient(180deg, rgba(10,15,30,0.55) 0%, rgba(10,15,30,0.30) 50%, rgba(10,15,30,0.70) 100%);
+    }
+    [data-theme="light"] .hero-bg-overlay {
+      background: linear-gradient(180deg, rgba(240,245,255,0.60) 0%, rgba(240,245,255,0.30) 50%, rgba(240,245,255,0.65) 100%);
+    }
+    #hero-canvas { position: absolute; inset: 0; z-index: 2; }
+    .hero-overlay {
+      position: absolute; inset: 0; z-index: 3;
       background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(41,121,255,0.09) 0%, transparent 68%);
     }
     [data-theme="light"] .hero-overlay {
@@ -260,7 +274,7 @@
     }
 
     .hero-content {
-      position: relative; z-index: 2;
+      position: relative; z-index: 4;
       text-align: center; max-width: 940px;
       padding: 0 1.75rem; padding-top: 5rem;
     }
@@ -332,7 +346,7 @@
 
     .hero-scroll {
       position: absolute; bottom: 2.5rem; left: 50%;
-      transform: translateX(-50%); z-index: 2;
+      transform: translateX(-50%); z-index: 4;
       display: flex; flex-direction: column; align-items: center; gap: 0.4rem;
       color: var(--text-muted); font-size: 0.75rem; letter-spacing: 0.1em;
       animation: scrollBounce 2.2s infinite;
@@ -350,6 +364,13 @@
       border-radius: 16px;
       margin-top: 2.5rem;
       border-left: 4px solid var(--blue);
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      align-items: center;
+    }
+    @media (min-width: 768px) {
+      .icip-banner { grid-template-columns: 1fr 280px; }
     }
     .icip-banner .icip-flag {
       font-size: 0.78rem; font-family: 'JetBrains Mono', monospace;
@@ -365,6 +386,21 @@
     }
     .icip-meta {
       display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.25rem;
+    }
+    .icip-photo-wrap {
+      display: none;
+      border-radius: 12px; overflow: hidden; height: 200px;
+      position: relative;
+    }
+    @media (min-width: 768px) { .icip-photo-wrap { display: block; } }
+    .icip-photo-wrap img {
+      width: 100%; height: 100%; object-fit: cover; object-position: center;
+      border-radius: 12px;
+    }
+    .icip-photo-wrap::after {
+      content: '';
+      position: absolute; inset: 0; border-radius: 12px;
+      background: linear-gradient(135deg, rgba(10,15,30,0.25) 0%, transparent 60%);
     }
 
     /* ============================================================
@@ -396,6 +432,39 @@
     .stat-val { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.1rem; }
     .stat-lbl { font-size: 0.75rem; color: var(--text-muted); margin-top: 0.15rem; }
 
+    /* Imagery strip */
+    .imagery-strip {
+      display: grid; grid-template-columns: repeat(3,1fr); gap: 0.85rem;
+      margin-top: 1.75rem;
+    }
+    .imagery-item {
+      position: relative; border-radius: 10px; overflow: hidden;
+      aspect-ratio: 4/3; cursor: default;
+    }
+    .imagery-item img {
+      width: 100%; height: 100%; object-fit: cover; object-position: center;
+      transition: transform 0.5s ease; display: block;
+    }
+    .imagery-item:hover img { transform: scale(1.07); }
+    .imagery-item-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(0deg, rgba(10,15,30,0.78) 0%, rgba(10,15,30,0.10) 55%, transparent 100%);
+    }
+    [data-theme="light"] .imagery-item-overlay {
+      background: linear-gradient(0deg, rgba(10,15,30,0.65) 0%, rgba(10,15,30,0.05) 55%, transparent 100%);
+    }
+    .imagery-item-label {
+      position: absolute; bottom: 0.55rem; left: 0; right: 0;
+      text-align: center;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem; font-weight: 600;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: #fff; text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+    }
+    @media (max-width: 640px) {
+      .imagery-strip { grid-template-columns: 1fr; }
+    }
+
     /* Topic tags */
     .tags-block h4 {
       font-family: 'JetBrains Mono', monospace; font-size: 0.78rem;
@@ -422,6 +491,14 @@
       max-width: 680px; margin: 0 auto;
       text-align: center; padding: 2.25rem 2rem;
       border-radius: 20px;
+      background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(41,121,255,0.05) 39px, rgba(41,121,255,0.05) 40px),
+        repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(41,121,255,0.05) 39px, rgba(41,121,255,0.05) 40px);
+    }
+    [data-theme="light"] .speakers-tba {
+      background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(21,101,192,0.06) 39px, rgba(21,101,192,0.06) 40px),
+        repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(21,101,192,0.06) 39px, rgba(21,101,192,0.06) 40px);
     }
     .speakers-tba-icon {
       width: 80px; height: 80px; border-radius: 50%;
@@ -790,6 +867,8 @@
      HERO
 ============================================================ -->
 <section id="hero">
+  <img id="hero-bg" src="assets/hero-bg.jpg" alt="" loading="eager" aria-hidden="true">
+  <div class="hero-bg-overlay"></div>
   <canvas id="hero-canvas"></canvas>
   <div class="hero-overlay"></div>
 
@@ -906,6 +985,25 @@
             <div class="stat-lbl">Proceedings</div>
           </div>
         </div>
+
+        <!-- Satellite imagery strip -->
+        <div class="imagery-strip fade-in d2">
+          <div class="imagery-item">
+            <img src="assets/vis-flood.jpg" alt="Flood mapping from satellite" loading="lazy">
+            <div class="imagery-item-overlay"></div>
+            <span class="imagery-item-label">Flood Mapping</span>
+          </div>
+          <div class="imagery-item">
+            <img src="assets/vis-glacier.jpg" alt="Glacier monitoring from satellite" loading="lazy">
+            <div class="imagery-item-overlay"></div>
+            <span class="imagery-item-label">Glacier Monitoring</span>
+          </div>
+          <div class="imagery-item">
+            <img src="assets/vis-vegetation.jpg" alt="Vegetation analysis NDVI" loading="lazy">
+            <div class="imagery-item-overlay"></div>
+            <span class="imagery-item-label">Vegetation Analysis</span>
+          </div>
+        </div>
       </div>
 
       <div class="fade-in d2">
@@ -937,22 +1035,27 @@
 
     <!-- ICIP 2026 Info Banner -->
     <div class="icip-banner glass-card fade-in" style="margin-top:4rem;">
-      <p class="icip-flag"><i class="fa-solid fa-flag"></i>&nbsp; Host Conference</p>
-      <h3>IEEE International Conference on Image Processing — ICIP 2026</h3>
-      <p>
-        The IEEE International Conference on Image Processing is the IEEE flagship event on image processing,
-        vision, and imaging. Organized annually since 1994, the conference brings together leading researchers
-        and practitioners from around the world. Its 33rd edition, ICIP 2026, will be held in
-        <strong>Tampere, Finland on 13–17 September 2026</strong> and will showcase the latest developments
-        in the field while offering participants numerous opportunities to present and engage.
-      </p>
-      <div class="icip-meta">
-        <span class="badge badge-blue"><i class="fa-solid fa-location-dot"></i> Tampere, Finland</span>
-        <span class="badge badge-cyan"><i class="fa-regular fa-calendar"></i> 13–17 September 2026</span>
-        <span class="badge badge-gray"><i class="fa-solid fa-hashtag"></i> 33rd Edition</span>
-        <a href="https://2026.ieeeicip.org/" target="_blank" rel="noopener" class="badge badge-blue" style="text-decoration:none;">
-          <i class="fa-solid fa-arrow-up-right-from-square"></i> ieeeicip.org
-        </a>
+      <div class="icip-banner-text">
+        <p class="icip-flag"><i class="fa-solid fa-flag"></i>&nbsp; Host Conference</p>
+        <h3>IEEE International Conference on Image Processing — ICIP 2026</h3>
+        <p>
+          The IEEE International Conference on Image Processing is the IEEE flagship event on image processing,
+          vision, and imaging. Organized annually since 1994, the conference brings together leading researchers
+          and practitioners from around the world. Its 33rd edition, ICIP 2026, will be held in
+          <strong>Tampere, Finland on 13–17 September 2026</strong> and will showcase the latest developments
+          in the field while offering participants numerous opportunities to present and engage.
+        </p>
+        <div class="icip-meta">
+          <span class="badge badge-blue"><i class="fa-solid fa-location-dot"></i> Tampere, Finland</span>
+          <span class="badge badge-cyan"><i class="fa-regular fa-calendar"></i> 13–17 September 2026</span>
+          <span class="badge badge-gray"><i class="fa-solid fa-hashtag"></i> 33rd Edition</span>
+          <a href="https://2026.ieeeicip.org/" target="_blank" rel="noopener" class="badge badge-blue" style="text-decoration:none;">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> ieeeicip.org
+          </a>
+        </div>
+      </div>
+      <div class="icip-photo-wrap">
+        <img src="assets/tampere.jpg" alt="Tampere, Finland cityscape" loading="lazy">
       </div>
     </div>
   </div>
