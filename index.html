@@ -73,7 +73,7 @@
 
     /* ===== LAYOUT ===== */
     .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 1.75rem; }
-    .section    { padding: 6rem 0; }
+    .section    { padding: 3.5rem 0; }
 
     /* ===== TYPOGRAPHY HELPERS ===== */
     .section-label {
@@ -95,7 +95,7 @@
       max-width: 640px;
       line-height: 1.75;
     }
-    .section-header { text-align: center; margin-bottom: 4rem; }
+    .section-header { text-align: center; margin-bottom: 2.25rem; }
     .section-header .section-subtitle { margin: 0 auto; }
 
     /* ===== GLASS CARD ===== */
@@ -262,7 +262,7 @@
     .hero-content {
       position: relative; z-index: 2;
       text-align: center; max-width: 940px;
-      padding: 0 1.75rem; padding-top: 6rem;
+      padding: 0 1.75rem; padding-top: 5rem;
     }
 
     .hero-badge {
@@ -271,13 +271,13 @@
       background: rgba(41,121,255,0.1); border: 1px solid rgba(41,121,255,0.3);
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.82rem; font-weight: 600; letter-spacing: 0.04em;
-      color: var(--blue); margin-bottom: 1.75rem;
+      color: var(--blue); margin-bottom: 1.1rem;
     }
     .hero-badge i { color: var(--cyan); }
 
     .hero-title {
       font-size: clamp(2.2rem, 5vw, 3.75rem);
-      font-weight: 700; line-height: 1.15; margin-bottom: 1.25rem;
+      font-weight: 700; line-height: 1.15; margin-bottom: 0.9rem;
       background: linear-gradient(135deg, var(--text) 0%, var(--cyan) 40%, var(--blue) 70%, var(--text) 100%);
       background-size: 300% 300%;
       -webkit-background-clip: text; -webkit-text-fill-color: transparent;
@@ -298,13 +298,13 @@
 
     .hero-tagline {
       font-size: clamp(1.05rem, 2vw, 1.25rem);
-      color: var(--text-muted); margin-bottom: 2.5rem; font-weight: 400;
+      color: var(--text-muted); margin-bottom: 1.75rem; font-weight: 400;
     }
     .hero-tagline strong { color: var(--cyan); font-weight: 600; }
 
     .hero-actions {
       display: flex; flex-wrap: wrap; gap: 1rem;
-      justify-content: center; margin-bottom: 3.5rem;
+      justify-content: center; margin-bottom: 2rem;
     }
 
     /* Countdown */
@@ -346,9 +346,9 @@
        ICIP INFO BANNER
     ============================================================ */
     .icip-banner {
-      padding: 2.25rem 2rem;
+      padding: 1.75rem 2rem;
       border-radius: 16px;
-      margin-top: 4rem;
+      margin-top: 2.5rem;
       border-left: 4px solid var(--blue);
     }
     .icip-banner .icip-flag {
@@ -373,7 +373,7 @@
     #about { background: var(--bg); }
 
     .about-grid {
-      display: grid; grid-template-columns: 1fr; gap: 3rem;
+      display: grid; grid-template-columns: 1fr; gap: 2rem;
     }
     @media (min-width: 1024px) {
       .about-grid { grid-template-columns: 1.25fr 1fr; align-items: start; }
@@ -386,7 +386,7 @@
     .about-text p:last-child { margin-bottom: 0; }
 
     .stat-cards {
-      display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; margin-top: 2.25rem;
+      display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; margin-top: 1.5rem;
     }
     .stat-card {
       padding: 1.35rem 1rem; text-align: center;
@@ -420,14 +420,14 @@
 
     .speakers-tba {
       max-width: 680px; margin: 0 auto;
-      text-align: center; padding: 3.5rem 2rem;
+      text-align: center; padding: 2.25rem 2rem;
       border-radius: 20px;
     }
     .speakers-tba-icon {
       width: 80px; height: 80px; border-radius: 50%;
       background: rgba(41,121,255,0.1); border: 2px solid rgba(41,121,255,0.25);
       display: flex; align-items: center; justify-content: center;
-      margin: 0 auto 1.75rem; font-size: 2rem; color: var(--blue);
+      margin: 0 auto 1.25rem; font-size: 2rem; color: var(--blue);
     }
     .speakers-tba h3 { font-size: 1.55rem; margin-bottom: 1rem; }
     .speakers-tba p { color: var(--text-muted); font-size: 1.08rem; line-height: 1.8; margin-bottom: 0.75rem; }
@@ -439,7 +439,7 @@
     #schedule { background: var(--bg); }
 
     .schedule-note {
-      text-align: center; margin-bottom: 3.5rem;
+      text-align: center; margin-bottom: 2rem;
       color: var(--text-muted); font-size: 1.05rem;
     }
 
@@ -454,7 +454,7 @@
       .timeline::before { left: 50%; transform: translateX(-50%); }
     }
 
-    .tl-item { position: relative; padding-left: 4rem; margin-bottom: 2.25rem; }
+    .tl-item { position: relative; padding-left: 4rem; margin-bottom: 1.5rem; }
     @media (min-width: 640px) {
       .tl-item {
         padding-left: 0; display: grid;
@@ -507,9 +507,9 @@
     .cfp-grid { display: grid; grid-template-columns: 1fr; gap: 2.5rem; }
     @media (min-width: 1024px) { .cfp-grid { grid-template-columns: 1.25fr 1fr; } }
 
-    .cfp-topics h3 { font-size: 1.2rem; margin-bottom: 1.75rem; color: var(--cyan); }
+    .cfp-topics h3 { font-size: 1.2rem; margin-bottom: 1.25rem; color: var(--cyan); }
 
-    .topic-group { margin-bottom: 2.1rem; }
+    .topic-group { margin-bottom: 1.35rem; }
     .topic-group h4 {
       font-family: 'JetBrains Mono', monospace; font-size: 0.78rem;
       text-transform: uppercase; letter-spacing: 0.12em;
@@ -607,8 +607,8 @@
     .org-grid-senior {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.75rem;
-      margin-bottom: 1.75rem;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
     }
 
     /* Bottom row: 2 early-career organizers */
@@ -661,11 +661,11 @@
     /* ============================================================
        SPONSORS
     ============================================================ */
-    #sponsors { background: var(--bg); padding: 5rem 0; }
+    #sponsors { background: var(--bg); padding: 3rem 0; }
 
     .sponsors-inner { text-align: center; }
     .sponsors-inner h2 { font-size: 1.6rem; margin-bottom: 0.75rem; }
-    .sponsors-inner > p { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 3rem; }
+    .sponsors-inner > p { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 2rem; }
 
     .sponsor-strip {
       display: flex; flex-wrap: wrap; justify-content: center; gap: 2.5rem; align-items: center;
@@ -696,11 +696,11 @@
     ============================================================ */
     footer {
       background: var(--bg-alt); border-top: 1px solid var(--border);
-      padding: 3.5rem 0 2rem;
+      padding: 2.5rem 0 1.5rem;
     }
 
     .footer-grid {
-      display: grid; grid-template-columns: 1fr; gap: 2.5rem; margin-bottom: 3rem;
+      display: grid; grid-template-columns: 1fr; gap: 2rem; margin-bottom: 2rem;
     }
     @media (min-width: 640px) {
       .footer-grid { grid-template-columns: 1.6fr 1fr 1fr; }
@@ -853,7 +853,7 @@
 
 <!-- Wave -->
 <div class="wave-wrap">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 60" preserveAspectRatio="none" style="height:60px;width:100%;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 60" preserveAspectRatio="none" style="height:36px;width:100%;">
     <path style="fill:var(--bg-alt)" d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z"/>
   </svg>
 </div>
@@ -874,7 +874,7 @@
         <p>
           Earth Observation is a rapidly growing research field that combines computer vision, machine learning,
           and signal/image processing to address some of the most pressing challenges related to climate change,
-          the water cycle, and environmental attribute prediction — including water quality, snow depth,
+          the water cycle, and environmental attribute prediction - including water quality, snow depth,
           vegetation cover, and pollution.
         </p>
         <p>
@@ -960,7 +960,7 @@
 
 <!-- Wave -->
 <div class="wave-wrap">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 60" preserveAspectRatio="none" style="height:60px;width:100%;background:var(--bg-alt);">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 60" preserveAspectRatio="none" style="height:36px;width:100%;background:var(--bg-alt);">
     <path style="fill:var(--bg)" d="M0,30 C480,60 960,0 1440,30 L1440,60 L0,60 Z"/>
   </svg>
 </div>
@@ -1001,7 +1001,7 @@
 
 <!-- Wave -->
 <div class="wave-wrap">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 60" preserveAspectRatio="none" style="height:60px;width:100%;background:var(--bg);">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 60" preserveAspectRatio="none" style="height:36px;width:100%;background:var(--bg);">
     <path style="fill:var(--bg-alt)" d="M0,30 C360,0 1080,60 1440,30 L1440,60 L0,60 Z"/>
   </svg>
 </div>
@@ -1077,7 +1077,7 @@
 
 <!-- Wave -->
 <div class="wave-wrap">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 60" preserveAspectRatio="none" style="height:60px;width:100%;background:var(--bg-alt);">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 60" preserveAspectRatio="none" style="height:36px;width:100%;background:var(--bg-alt);">
     <path style="fill:var(--bg)" d="M0,30 C480,60 960,0 1440,30 L1440,60 L0,60 Z"/>
   </svg>
 </div>
@@ -1191,7 +1191,7 @@
 
 <!-- Wave -->
 <div class="wave-wrap">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 60" preserveAspectRatio="none" style="height:60px;width:100%;background:var(--bg);">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 60" preserveAspectRatio="none" style="height:36px;width:100%;background:var(--bg);">
     <path style="fill:var(--bg-alt)" d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z"/>
   </svg>
 </div>
@@ -1264,7 +1264,7 @@
 
 <!-- Wave -->
 <div class="wave-wrap">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 60" preserveAspectRatio="none" style="height:60px;width:100%;background:var(--bg-alt);">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 60" preserveAspectRatio="none" style="height:36px;width:100%;background:var(--bg-alt);">
     <path style="fill:var(--bg)" d="M0,30 C480,60 960,0 1440,30 L1440,60 L0,60 Z"/>
   </svg>
 </div>
@@ -1368,7 +1368,7 @@
 
 <!-- Wave -->
 <div class="wave-wrap">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 60" preserveAspectRatio="none" style="height:60px;width:100%;background:var(--bg);">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 60" preserveAspectRatio="none" style="height:36px;width:100%;background:var(--bg);">
     <path style="fill:var(--bg-alt)" d="M0,30 C360,0 1080,60 1440,30 L1440,60 L0,60 Z"/>
   </svg>
 </div>
@@ -1376,7 +1376,7 @@
 <!-- ============================================================
      SPONSORS
 ============================================================ -->
-<section id="sponsors" style="background:var(--bg-alt);padding:5rem 0;">
+<section id="sponsors" style="background:var(--bg-alt);padding:3rem 0;">
   <div class="container">
     <div class="sponsors-inner fade-in">
       <p class="section-label" style="text-align:center;"><i class="fa-solid fa-handshake"></i>&nbsp; Supported By</p>
