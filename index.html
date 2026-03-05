@@ -284,25 +284,27 @@
 
     .hero-badge {
       display: inline-flex; align-items: center; gap: 0.55rem;
-      padding: 0.45rem 1.2rem; border-radius: 999px;
-      background: rgba(41,121,255,0.1); border: 1px solid rgba(41,121,255,0.3);
+      padding: 0.6rem 1.5rem; border-radius: 999px;
+      background: rgba(41,121,255,0.18); border: 1px solid rgba(255,255,255,0.4);
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.82rem; font-weight: 600; letter-spacing: 0.04em;
-      color: var(--blue); margin-bottom: 1.1rem;
+      font-size: 1.05rem; font-weight: 700; letter-spacing: 0.04em;
+      color: #fff; margin-bottom: 1.1rem;
+      text-shadow: 0 1px 6px rgba(0,0,0,0.5);
     }
-    .hero-badge i { color: var(--cyan); }
+    .hero-badge i { color: #7FE9FF; }
 
     .hero-title {
-      font-size: clamp(2.2rem, 5vw, 3.75rem);
-      font-weight: 700; line-height: 1.15; margin-bottom: 0.9rem;
-      background: linear-gradient(135deg, var(--text) 0%, var(--cyan) 40%, var(--blue) 70%, var(--text) 100%);
+      font-size: clamp(2.8rem, 6.5vw, 5.5rem);
+      font-weight: 800; line-height: 1.1; margin-bottom: 0.9rem;
+      background: linear-gradient(135deg, #ffffff 0%, #00E5FF 40%, #82B1FF 70%, #ffffff 100%);
       background-size: 300% 300%;
       -webkit-background-clip: text; -webkit-text-fill-color: transparent;
       background-clip: text;
       animation: gradShift 7s ease infinite;
+      filter: drop-shadow(0 2px 14px rgba(0,0,0,0.65));
     }
     [data-theme="light"] .hero-title {
-      background: linear-gradient(135deg, #0D1117 0%, #0077B6 40%, #1565C0 70%, #0D1117 100%);
+      background: linear-gradient(135deg, #ffffff 0%, #64DFFF 40%, #90CAF9 70%, #ffffff 100%);
       background-size: 300% 300%;
       -webkit-background-clip: text; -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -882,7 +884,7 @@
     </div>
 
     <h1 class="hero-title fade-in d1">
-      Mining Imaging Data for<br>Hydrological and Environmental Modelling
+      Workshop on Mining Imaging Data<br>for Hydrological and Environmental Modelling
     </h1>
 
     <p class="hero-tagline fade-in d2">
